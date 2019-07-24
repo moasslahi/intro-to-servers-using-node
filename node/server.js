@@ -14,3 +14,31 @@ const server = http.createServer((request, response) => {
 })
 
 server.listen(3000);
+
+
+
+
+// server using express.js
+
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {               // if u get this route do this else do the next rout 
+	res.send("getting root ");
+});
+
+app.get('/profile', (req, res) => {
+	res.send("getting profile ");
+});
+
+app.delete('/profile', (req, res) => {
+
+	const user = {
+		name: 'mo',
+		hobby: 'footy'
+	}
+	
+	res.send(user);
+});
+app.listen(3000)
